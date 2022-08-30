@@ -41,10 +41,10 @@ impl Calculator for MyCalculator {
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let addr = "[::1]:50051".parse()?;
-    let greeter = MyCalculator::default();
+    let calculator = MyCalculator::default();
 
     Server::builder()
-        .add_service(CalculatorServer::new(greeter))
+        .add_service(CalculatorServer::new(calculator))
         .serve(addr)
         .await?;
 
