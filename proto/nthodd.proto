@@ -1,0 +1,14 @@
+syntax = "proto3";
+package nthodd;
+
+service Calculator {
+  rpc FindNthOdd (NthOddRequest) returns (NthOddReply); 
+}
+
+message NthOddRequest {
+  uint32 value = 1;
+}
+
+message NthOddReply {
+  uint32 value = 1;
+}
